@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do App | Register</title>
+    <script src="registerscript.js" async defer></script>
+</head>
+<body>
+    <form method="post" action="/register_user" onsubmit="return validate()">
+    <table>
+    <tr><td>email :</td><td> <input type="email" name="email" id="email" reqiured/></td></tr>
+    <tr><td>password :</td><td> <input type="password" name="pass" id="pass" required/></td></tr> 
+    <tr><td>Re-Type password :</td><td> <input type="password" name='repass' id="repass" required/></td></tr>
+    <tr><td></td><td><input type="submit" value="Register"/>
+    </form>
+</body>
+</html>

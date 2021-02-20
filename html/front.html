@@ -32,11 +32,19 @@
             padding:4%;
             margin:-0.5%;
         }
+        #scrolling{            
+            position: -webkit-sticky;
+            position: sticky;
+            top: 0;
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+        }
         #navigation{
             background-color:#edf5e1;
             padding:2%;
             margin:-0.5%;
             text-align: right;
+            display: block;
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
         }
         .navigationButton{
             text-decoration: none;
@@ -52,18 +60,81 @@
             background-color:#5cdb95; 
             color:#edf5e1;
         }
+        #body-content{
+            background-color: #eeeeee;
+            margin-top:3%;
+            margin-left:7%;
+            margin-right:7%;
+            margin-bottom:5%;
+            padding:3%;
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+        }
+        #statistics{
+            background-color: white;
+            padding:5%;
+            margin:5%;
+            text-align:center;
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+        }
+        #heading{
+            font-size:30px;
+            font-weight: 800;
+            font-family:sans-serif;
+            border-bottom:3px solid gold;
+            display: inline-block;
+            margin:5%;
+        }
+        #statOne{
+            background-color: cyan;
+            padding:3%;
+            display: inline-block;
+        }
+        #statTwo{
+            background-color: cyan;
+            padding:3%;
+            display: inline-block;
+            left:40%;
+        }
+        #statThree{
+            background-color: cyan;
+            padding:3%;
+            display: inline-block;
+            left:-40%;
+        }
+        .stat{
+            font-family:sans-serif;
+            margin-left:5%;
+            margin-right:5%;
+            font-size:18px;
+            font-weight:500;
+            box-shadow: 0 2px 4px 0 rgb(0 0 0 / 50%);
+        }
     </style>
+    <script src="frontscript.js" async defer></script> 
 </head>
-<body>
+<body onload="initialize()">
+    <div id="scrolling">
     <section id="header">
         <img src="#" width="100px" height="100px"/>
         <div id="headerButtons">
-        <a href="login.html" class="headerButton">Login</a>
-        <a href="register.html" class="headerButton">Register</a>
+        <a href="/login" class="headerButton">Login</a>
+        <a href="/register" class="headerButton">Register</a>
         </div>
     </section>
-    <section id="navigation">
-        <a href="#aboutus" class="navigationButton">About Us</a><a href="#contactus" class="navigationButton">Contact Us</a>
+    <div id="navigation">
+        <a href="#statistics" class="navigationButton">Statistics</a>
+        <a href="" class="navigationButton">To Do Advantages</a>
+        <a href="#aboutus" class="navigationButton">About Us</a>
+        <a href="#contactus" class="navigationButton">Contact Us</a>
+    </div>
+    </div>
+    <section id="body-content">
+    <section id="statistics">
+        <div id="heading">Statistics</div><br/><br/>
+        <div id="statOne" class="stat">Registered Users<br/><div id="statOneCount">0</div></div>
+        <div id="statTwo" class="stat">Overall Users<br/><div id="statTwoCount">0</div></div>
+        <div id="statThree" class="stat">Daily Users<br/><div id="statThreeCount">0</div></div>
+    </section>
     </section>
 </body>
 </html>
