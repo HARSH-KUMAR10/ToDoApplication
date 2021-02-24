@@ -154,7 +154,7 @@ app.get('/todo',(req,res)=>{
 /*
 Assigning port number to the application
 */
-app.listen(8001,(e)=>{
+app.listen(process.env.PORT || 8001,(e)=>{
     if(e){
         console.log(e);
     }else{
