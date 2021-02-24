@@ -1,0 +1,23 @@
+{
+  "name": "hk-todo-application",
+  "version": "1.0.0",
+  "description": "this a web application created for to-do task of a person",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HARSH-KUMAR10/ToDoApplication.git"
+  },
+  "keywords": [
+    "to-do",
+    "application"
+  ],
+  "author": "Harsh Kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HARSH-KUMAR10/ToDoApplication/issues"
+  },
+  "homepage": "https://github.com/HARSH-KUMAR10/ToDoApplication#readme"
+}
