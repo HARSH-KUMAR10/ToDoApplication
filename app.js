@@ -82,7 +82,7 @@ var pass = req.body.pass;
 var sql = "select * from user where email='"+email+"'and password='"+pass+"';";
 pool.query(sql,(err,result)=>{
     if(err){
-        res.send('wrong id password');
+        res.sendFile(__dirname+'login-result/error.html');
     }else{
         req.session.email=email;
         req.session.pass=pass;
