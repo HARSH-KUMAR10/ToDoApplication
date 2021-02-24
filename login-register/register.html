@@ -6,14 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App | Register</title>
     <script src="registerscript.js" async defer></script>
+    <style>
+        body{
+            background-color: #eeeeee;
+        }
+        #body-content{
+            background-color: #ccffee;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            padding-left:10%;
+            padding-right:10%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: inline-block;
+            box-shadow: 8px 16px 16px 8px rgba(0,0,0,0.2);
+        }
+        #big{
+            margin-top:-14.5%;
+            text-align: center;
+        }
+        #green{
+            margin:-0.5%;
+            background-color: #5cdb95;
+            padding:12.5%;
+            box-shadow: 8px 16px 16px 8px rgba(0,0,0,0.2);
+        }
+        #logo1{
+            position: absolute;
+            margin:-10%;
+        }
+        #title{
+            position: relative;
+            margin-top:0%;
+            border-bottom:5px solid gold;
+            padding:2%;
+            font-size: 30px;
+        }
+        #inputs{
+            padding:3%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+        }
+        input{
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        #submit-button{
+            background-color: chartreuse;
+            padding:3%;
+            margin-top:15%;
+            margin-left:73%;
+            border: 3px solid chartreuse;
+            font-family:sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color:white;
+        }
+        #submit-button:hover{
+            background-color: white;
+            color:chartreuse;
+        }
+    </style>
 </head>
 <body>
+    <div id="green">
+        <img src="images/tod1.gif" id="logo1" width="150px" height="150px"/>
+    </div>
+    
+    <div id="big">
+        <div id="body-content">
     <form method="post" action="/register_user" onsubmit="return validate()">
+        <h2 id="title">Register</h2>
     <table>
-    <tr><td>email :</td><td> <input type="email" name="email" id="email" reqiured/></td></tr>
-    <tr><td>password :</td><td> <input type="password" name="pass" id="pass" required/></td></tr> 
-    <tr><td>Re-Type password :</td><td> <input type="password" name='repass' id="repass" required/></td></tr>
-    <tr><td></td><td><input type="submit" value="Register"/>
+    <tr><td id="inputs"> <input type="email" name="email" id="email" placeholder="Enter email ..." size="25" reqiured/></td></tr>
+    <tr><td id="inputs"> <input type="password" name="pass" id="pass" placeholder="Enter password ..." size="25" required/></td></tr> 
+    <tr><td id="inputs"> <input type="password" name='repass' id="repass" placeholder="Re-Type Password" size="25" required/></td></tr>
+    <tr><td><input type="submit" id="submit-button" value="Register"/>
+    </table>
     </form>
+        </div>
+    </div>
+
+    <a href="/">Home</a>
 </body>
 </html>

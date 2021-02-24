@@ -13,6 +13,35 @@ app.get('/',(req,res)=>{
     res.sendFile(__dirname+"/html/front.html");
 });
 
+app.get('/getTotalUsers',(req,res)=>{
+    pool.query('select * from user',(err,result)=>{
+        var object = {};
+        if(err){
+            object.count=0;
+            res.json(object);
+        }else{
+            object.count=result.length;
+            res.json(object);
+        }
+    });
+});
+
+
+app.get('/getTotalTasks',(req,res)=>{
+    pool.query('select * from task',(err,result)=>{
+        var object = {};
+        if(err){
+            object.count=0;
+            res.json(object);
+        }else{
+            object.count=result.length;
+            res.json(object);
+        }
+    });
+});
+
+
+
 /*
 Register new users
 */
@@ -38,7 +67,7 @@ Login
 */
 
 app.use(session({ 
-    secret: 'Your_Secret_Key', 
+    secret: 'ToDoApp', 
     resave: true, 
     saveUninitialized: true
 }));
@@ -53,7 +82,7 @@ var pass = req.body.pass;
 var sql = "select * from user where email='"+email+"'and password='"+pass+"';";
 pool.query(sql,(err,result)=>{
     if(err){
-        res.send(err);
+        res.send('wrong id password');
     }else{
         req.session.email=email;
         req.session.pass=pass;
@@ -73,7 +102,7 @@ add task
 app.get('/newTaskAdd',(req,res)=>{
     var newTask = req.query.newTask;
     var email = req.session.email;
-    var sql = 'insert into task(email,task_desc) values('+email+"','"+newTask+"')";
+    var sql = "insert into task(email,task_desc) values('"+email+"','"+newTask+"')";
     pool.query(sql,(err,result)=>{
         if(err){
             res.json(result);
@@ -89,6 +118,31 @@ app.get('/getAllTask',(req,res)=>{
     pool.query(sql,(err,result)=>{
         res.json(result);
     });
+});
+
+app.get('/deleteTask',(req,res)=>{
+var taskName = req.query.taskName;
+var email = req.session.email;
+var sql = "delete from task where task_desc='"+taskName+"' and email='"+email+"'";
+pool.query(sql,(err,result)=>{
+    var response = {};
+    if(err){
+        response.found=false;
+        res.json(response);
+    }else{
+        response.found=true;
+        res.json(response);
+    }
+});
+});
+
+
+/*
+logout
+*/
+app.get('/logout',(req,res)=>{
+req.session.destroy;
+res.sendFile(__dirname+'/login-register/login.html');
 });
 
 /*

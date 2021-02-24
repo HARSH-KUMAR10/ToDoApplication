@@ -6,11 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do App</title>
     <script src="todo.js" async defer></script>
+    <style>
+        body{
+            background-color: #eeeeee;
+        }
+        #body-content{
+            background-color: #ccffee;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            padding-left:15%;
+            padding-right:15%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: inline-block;
+            box-shadow: 8px 16px 16px 8px rgba(0,0,0,0.2);
+        }
+        #big{
+            margin-top:-12.5%;
+            text-align: center;
+        }
+        #green{
+            margin:-0.5%;
+            background-color: #5cdb95;
+            padding:12.5%;
+            box-shadow: 8px 16px 16px 8px rgba(0,0,0,0.2);
+        }
+        #logo1{
+            position: absolute;
+            margin:-10%;
+        }
+        #submit-button{
+            background-color: gray;
+            padding:3%;
+            margin-top:15%;
+            margin-left:73%;
+            border: 3px solid gray;
+            font-family:sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color:white;
+        }
+        #submit-button:hover{
+            background-color: white;
+            color:gray;
+        }
+        #add-button{
+            background-color: chartreuse;
+            padding:3%;
+            border: 3px solid chartreuse;
+            font-family:sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color:white;
+            position: relative;
+        }
+        
+        #add-button:hover{
+            background-color: white;
+            color:chartreuse;
+        }#newtask{
+            padding:3%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+        }
+        input{
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
 </head>
 <body onload="getTask()">
+    <div id="green">
+        <img src="images/tod1.gif" id="logo1" width="150px" height="150px"/>
+    </div>
+    <div id="big">
+    <div id="body-content">
     <div id="tasks"></div>
-    <input type="text" name="newtask" id="newtask" required/>
-    <button type="button" onclick="newTaskAdd()">Add Task</button>
+    <input type="text" name="newtask" id="newtask" placeholder="Enter Task ..." required/><br/><br/>
+    <button type="button" id="add-button" onclick="newTaskAdd()">Add Task</button>
     <div id="result"></div>
+    <form action='/logout'>
+    <input type="submit" id="submit-button" value="logout"/>
+    </form>
+    </div>
+    </div>
 </body>
 </html>

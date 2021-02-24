@@ -5,14 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            background-color: #eeeeee;
+        }
+        #body-content{
+            background-color: #ccffee;
+            padding-top: 3%;
+            padding-bottom: 3%;
+            padding-left:10%;
+            padding-right:10%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: inline-block;
+            box-shadow: 8px 16px 16px 8px rgba(0,0,0,0.2);
+        }
+        #big{
+            margin-top:-12.5%;
+            text-align: center;
+        }
+        #green{
+            margin:-0.5%;
+            background-color: #5cdb95;
+            padding:12.5%;
+            box-shadow: 8px 16px 16px 8px rgba(0,0,0,0.2);
+        }
+        #logo1{
+            position: absolute;
+            margin:-10%;
+        }
+        #title{
+            position: relative;
+            margin-top:0%;
+            border-bottom:5px solid gold;
+            padding:2%;
+            font-size: 30px;
+        }
+        #form-input{
+            text-align: left;
+        }
+        #submit-button{
+            background-color: chartreuse;
+            padding:3%;
+            margin-top:15%;
+            margin-left:73%;
+            border: 3px solid chartreuse;
+            font-family:sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+            color:white;
+        }
+        #submit-button:hover{
+            background-color: white;
+            color:chartreuse;
+        }
+        #inputs{
+            padding:3%;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 18px;
+            font-weight: 800;
+        }
+        input{
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
 </head>
 <body>
+    <div id="green">
+        <img src="images/tod1.gif" id="logo1" width="150px" height="150px"/>
+    </div>
+    <div id="big">
+    <div id="body-content">
     <form action="loginUser" method="post">
-    <table>
-        <tr><td>Email : </td><td><input type="email" name="email" required/></td></tr>
-        <tr><td>Password : </td><td><input type="password" name="pass" required/></td></tr>
-        <tr><td></td><td><input type="submit" value="Login"/></td></tr>
+        <h2 id="title">Login</h2>
+    <table id="form-input">
+        <tr><td id="inputs"><input type="email" name="email" placeholder="Enter email..." size="25" required/></td></tr>
+        <tr><td id="inputs"><input type="password" name="pass" placeholder="Enter password..." size="25" required/></td></tr>
+        <tr><td><input type="submit" id="submit-button" value="Login"/></td></tr>
     </table>
     </form>
+    </div>
+    </div>
+    <a href="/">Home</a>
 </body>
 </html>
